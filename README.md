@@ -60,7 +60,12 @@ If you are not using [Anaconda](https://www.anaconda.com/download/), then you ca
         # From within TensorFlow/models/research/
         for /f %i in ('dir /b object_detection\protos\*.proto') do protoc object_detection\protos\%i --python_out=.
 
-4. Finally, add the necessary [Environment Variables](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#adding-necessary-environment-variables).
+4. Install the `Tensorflow\models\research\object_detection` package by executing the following command via command prompt:
+
+        # From within TensorFlow/models/research/
+        pip install .
+
+5. Finally, add the necessary [Environment Variables](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#adding-necessary-environment-variables).
 
 ## Usage
 
