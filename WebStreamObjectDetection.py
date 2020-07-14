@@ -24,7 +24,7 @@ from object_detection.utils import visualization_utils as vis_util
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # Define the video stream
-stream = urllib.request.urlopen('http://192.168.4.1:80', timeout = 15) # host address
+stream = urllib.request.urlopen('http://192.168.4.1:80', timeout = 5) # host address
 bytebuffer = bytes()
 should_stop = False
 windowname = 'Object Detection'
