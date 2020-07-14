@@ -70,7 +70,9 @@ If you are not using [Anaconda](https://www.anaconda.com/download/), then you ca
 
 3. Update the saved `WebStreamObjectDetection.py` with details of the WiFi connection (i.e. IP Address and Port Number) to the ESP32-CAM 'HTTP Multipart MJPEG' video stream in [this line](https://github.com/senglk/TensorFlow-Object-Detection-on-ESP32-Video-Stream/blob/master/WebStreamObjectDetection.py#L27) if necessary.
 
-3. Execute the script:
+4. Execute the script:
         
         # From /TensorFlow/models/research/object_detection
         python WebStreamObjectDetection.py
+
+5. Press `q` on the keyboard to terminate the window.
