@@ -1,4 +1,4 @@
-# TensorFlow-Object-Detection-on-ESP32-CAM-Video-Stream
+# TensorFlow Object Detection on VideoStream from ESP32-CAM
 
 ## Introduction
 
