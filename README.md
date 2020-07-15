@@ -16,7 +16,7 @@ While any video stream of 'HTTP Multipart MJPEG' should work, this was tested on
 
 The [ESP32-CAM](https://www.espressif.com/en/news/ESP32_CAM) consists of a ESP32 module and OV2640 camera sensor, integrated onto a development board. WiFi functionality of this device is enabled by the ESP32 module, and video is achieved by successive calls to the camera.
 
-For the ESP32-CAM, you will need to upload the code for streaming video over WiFi via [JPEG HTTP Stream](https://github.com/espressif/esp32-camera#jpeg-http-stream) (I call refer to this as 'HTTP Multipart MJPEG'). A tutorial on how to get the ESP32-CAM (with Video Stream) to connect to your WiFi router can be found [here](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/). Note that the tutorial uses UXGA (1600x1200) as default so you will get [6fps](https://github.com/espressif/esp32-camera/issues/15#issuecomment-532644189) if the WiFi conditions are good. I personally set it to SVGA (800x600) to get 12fps.
+For the ESP32-CAM, you will need to upload the code for streaming video over WiFi via [JPEG HTTP Stream](https://github.com/espressif/esp32-camera#jpeg-http-stream) (which I term as 'HTTP Multipart MJPEG' here). A tutorial on how to get the ESP32-CAM (with Video Stream) to connect to your WiFi router can be found [here](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/). Note that the tutorial uses UXGA (1600x1200) as default so you will get [6fps](https://github.com/espressif/esp32-camera/issues/15#issuecomment-532644189) if the WiFi conditions are good. I personally set it to SVGA (800x600) to get 12fps.
 
 ### Python 3
 
