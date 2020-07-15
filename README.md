@@ -14,9 +14,9 @@ As noted by the [author](https://github.com/sglvladi) of the [Tensor Flow Object
 
 While any video stream of 'HTTP Multipart MJPEG' should work, this was tested on with video stream from the ESP32-CAM. 
 
-The [ESP32-CAM](https://www.espressif.com/en/news/ESP32_CAM) consists of a ESP32 module and OV2460 camera sensor, integrated onto a development board. WiFi functionality of this device is enabled by the ESP32 module, and video is achieved by successive calls to the camera.
+The [ESP32-CAM](https://www.espressif.com/en/news/ESP32_CAM) consists of a ESP32 module and OV2640 camera sensor, integrated onto a development board. WiFi functionality of this device is enabled by the ESP32 module, and video is achieved by successive calls to the camera.
 
-For the ESP32-CAM, you will need to upload the code for streaming video over WiFi via [JPEG HTTP Stream](https://github.com/espressif/esp32-camera#jpeg-http-stream) (or what I call 'HTTP Multipart MJPEG').
+For the ESP32-CAM, you will need to upload the code for streaming video over WiFi via [JPEG HTTP Stream](https://github.com/espressif/esp32-camera#jpeg-http-stream) (I call refer to this as 'HTTP Multipart MJPEG'). A tutorial on how to get the ESP32-CAM (with Video Stream) to connect to your WiFi router can be found [here](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/). Note that the tutorial uses UXGA (1600x1200) as default so you will get [6fps](https://github.com/espressif/esp32-camera/issues/15#issuecomment-532644189) if the WiFi conditions are good. I personally set it to SVGA (800x600) to get 12fps.
 
 ### Python 3
 
@@ -30,7 +30,7 @@ TensorFlow is a Python library for fast numerical computing created and released
 
 The instructions to install TensorFlow can be found [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-cpu). The TensorFlow CPU variant should work fine for this script. You can 'upgrade' to the GPU variant in the future if you have compatible hardware.
 
-As I had TensorFlow 2.1 installed, I confirm that TensorFlow 2.1 object detection works with pre-trained models. As noted [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html), TensorFlow 2.X would work on pre-trained models, but model and training is not yet implemented (as of writing this README), so you might want to go for Tensorflow 1.14 instead if you wish to do more than object detection.
+As I had TensorFlow 2.1 installed, I confirm that TensorFlow 2.1 object detection works with pre-trained models. As noted [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html), TensorFlow 2.X would work on pre-trained models, but model and training is not yet implemented (as of writing this README), so you might want to go for Tensorflow 1.14 instead if you wish to do more than just object detection.
 
 While using TensorFlow GPU, I found that the code would run for a few frames (i.e. less than a second, since at 800x600 I get a 12fps stream), before freezing. It is unclear if this is because I am using TensorFlow 2.1, but I found that the workaround is to force the use of TensorFlow CPU when running this script by adding `os.environ["CUDA_VISIBLE_DEVICES"] = "-1"` at the top of the script, right after the imports, [as commented in the script](https://github.com/senglk/TensorFlow-Object-Detection-on-ESP32-Video-Stream/blob/master/WebStreamObjectDetection.py#L24).
 
